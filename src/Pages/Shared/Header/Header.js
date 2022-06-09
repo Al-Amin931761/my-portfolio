@@ -5,7 +5,7 @@ const Header = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/contact'>Contact</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        <li><a target="_blank" href="https://drive.google.com/file/d/1E_COpq0DNn1fRgZylLPiLC8pPuzRNdOP/view?usp=sharing"> Download Resume</a></li>
     </>
     return (
         <section>
