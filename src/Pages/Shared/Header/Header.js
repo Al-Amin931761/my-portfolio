@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/contact'>Contact</Link></li>
-        <li><a target="_blank" href="https://drive.google.com/file/d/1E_COpq0DNn1fRgZylLPiLC8pPuzRNdOP/view?usp=sharing"> Download Resume</a></li>
     </>
     return (
         <section>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-black text-white	">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -19,7 +17,7 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <Link to='/'>Al Amin</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
@@ -27,7 +25,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                    <a target="_blank" href="https://drive.google.com/file/d/1E_COpq0DNn1fRgZylLPiLC8pPuzRNdOP/view?usp=sharing"> Download Resume</a>
                 </div>
             </div>
         </section>

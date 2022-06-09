@@ -2,11 +2,16 @@ import React from 'react';
 import { BsMap } from 'react-icons/bs';
 import { VscMail } from 'react-icons/vsc';
 import { FiPhoneCall } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    const handleSubmit = event => {
+    const sendEmail = event => {
         event.preventDefault();
-    }
+        emailjs.sendForm('service_te8ht4e', 'template_8tk8z7h', event.target, 'kEtixGBVNFDZ5Zygz').then(res => {
+            console.log(res);
+        }).catch(error => console.log(error));
+        event.target.reset();
+    };
 
     return (
         <section >
@@ -41,16 +46,15 @@ const Contact = () => {
                 </div>
 
                 <div>
-                    <form onClick={handleSubmit} className='flex flex-col items-center'>
-                        <input style={{ width: "390px" }} className='input input-bordered mb-5' type="text" placeholder="YOUR NAME" />
-                        <input style={{ width: "390px" }} className='input input-bordered mb-5' type="text" placeholder="YOUR EMAIL" />
-                        <input style={{ width: "390px" }} className='input input-bordered mb-5' type="text" placeholder="YOUR SUBJECT" />
-                        <textarea className="textarea textarea-bordered mb-5" placeholder="YOUR MESSAGE" cols="54" rows="5"></textarea>
-                        <button className="btn btn-outline w-2/4">Button</button>
+                    <form onSubmit={sendEmail} className='flex flex-col items-center'>
+                        <input name='name' style={{ width: "390px" }} className='input input-bordered mb-5' type="text" placeholder="YOUR NAME" />
+                        <input name='user_email' style={{ width: "390px" }} className='input input-bordered mb-5' type="text" placeholder="YOUR EMAIL" />
+                        <textarea name='message' className="textarea textarea-bordered mb-5" placeholder="YOUR MESSAGE" cols="49" rows="5"></textarea>
+                        <input className='btn btn-outline w-2/4' type="submit" value="Sent Message" />
                     </form>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

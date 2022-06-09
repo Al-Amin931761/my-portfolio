@@ -1,10 +1,14 @@
 import React from 'react';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import MyProjects from '../MyProjects/MyProjects';
 
 const Home = () => {
     return (
         <div>
-            <h2 className='text-xl font-bold'>This is Home Page..</h2>
-            <a target="_blank" href="https://drive.google.com/file/d/1E_COpq0DNn1fRgZylLPiLC8pPuzRNdOP/view?usp=sharing"> Download Resume</a>
+            <About></About>
+            <MyProjects></MyProjects>
+            <Contact></Contact>
         </div>
     );
 };
