@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BsMap } from 'react-icons/bs';
 import { VscMail } from 'react-icons/vsc';
 import { FiPhoneCall } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Contact = () => {
     const sendEmail = event => {
@@ -13,8 +15,12 @@ const Contact = () => {
         event.target.reset();
     };
 
+    useEffect(() => {
+        AOS.init({ duration: 2000 })
+    }, []);
+
     return (
-        <section >
+        <section className='pb-10' id='contact' data-aos="fade-down">
             <h2 className='font-bold text-5xl text-center mb-10'>GET IN TOUCH</h2>
             <div className='grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2'>
                 <div className='ml-5 mb-5'>

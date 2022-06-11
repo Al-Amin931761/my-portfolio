@@ -5,7 +5,7 @@ const Footer = () => {
     const today = new Date();
     const year = today.getUTCFullYear();
     return (
-        <footer className=" bg-black text-white p-5 mt-5">
+        <footer className=" bg-black text-white p-5 ">
             <div>
                 <p className='text-center'>Copyright <AiOutlineCopyrightCircle className='inline' /> {year} - All right reserved</p>
             </div>
